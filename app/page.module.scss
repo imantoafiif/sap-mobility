@@ -1,0 +1,47 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(210.75deg, #0077b6 0%, #00527f 100%);
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 780px;
+        
+        li {
+            width: 140px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color .2s ease;
+
+            &:hover {
+                background: white;
+                color: #0077B6;
+            }
+        }
+    }
+}
+
+.content {
+    background: chocolate;
+    overflow-y: auto;
+    height: 100%;
+    flex-grow: 1;
+}
