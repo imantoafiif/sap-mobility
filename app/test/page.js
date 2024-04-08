@@ -1,4 +1,4 @@
-import TestCopmonent from "../components/Testcomponent"
+import TestCopmonent from "../components/TestComponent"
 
 const Page = () => {
     return (
