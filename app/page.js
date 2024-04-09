@@ -13,12 +13,22 @@ const Page = () => {
                     priority/>
                 <menu>
                     <ul className={style.header__menu}>
-                        <li>Products</li>
+                        <li className={style.active_nav}>Products</li>
                         <li>Why Ontego ?</li>
                         <li>Events</li>
                         <li>Resources</li>
                     </ul>
                 </menu>
+                <div className={style.header__req_demo}>
+                    <div className={style.hovered}></div>
+                    <span>Request a demo</span>
+                    <Image
+                        src="/arrow_light_blue.svg"
+                        alt="arrow"
+                        width={18}
+                        height={30}
+                        priority/>
+                </div>
             </header>
             <section className={style.content}>
                 {
