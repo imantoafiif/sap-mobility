@@ -32,18 +32,30 @@ const Page = () => {
                     </div>
                 </div>
                 <div className={style.header__submenu}>
-                    <Image
-                        src="/ontego_subline.svg"
-                        alt="arrow"
-                        width={104}
-                        height={55}
-                        priority/>
-                    <div className={style.header__submenu__container}>
-                        <ul>
-                            <li><p>Features</p></li>
-                            <li><p>Areas of Application</p></li>
-                            <li><p>Mobile Devices</p></li>
-                        </ul>
+                    <div className={style.header__submenu__daktau}>
+                        <Image
+                            src="/ontego_subline.svg"
+                            alt="arrow"
+                            width={104}
+                            height={55}
+                            priority/>
+                        <div className={style.header__submenu__container}>
+                            <ul>
+                                <li>
+                                    <font>Features</font>
+                                    <div>
+                                        <span>User Experience</span>   
+                                        <span>Template Principle</span>
+                                        <span>SAP Integration</span>
+                                        <span>Offline & Sync+</span>
+                                        <span>ERP Extensions</span>
+                                        <span>Ontego Designer</span>
+                                    </div>
+                                </li>
+                                <li><font>Areas of Application</font></li>
+                                <li><font>Mobile Devices</font></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </header>
