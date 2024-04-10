@@ -1,5 +1,9 @@
 import Image from 'next/image'
 import style from './page.module.scss'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBars
+} from "@fortawesome/free-solid-svg-icons";
 
 const Page = () => {
     return (
@@ -12,12 +16,133 @@ const Page = () => {
                         width={165}
                         height={22}
                         priority/>
+                    <FontAwesomeIcon icon={faBars} />
                     <menu>
                         <ul className={style.header__menu}>
-                            <li className={style.active_nav}>Products</li>
-                            <li>Why Ontego ?</li>
-                            <li>Events</li>
-                            <li>Resources</li>
+                            <li>
+                                <span>Products</span>
+                                <div className={style.header__submenu__floating}>
+                                    <div className={style.header__submenu__floating__container}>
+                                        <div className={style.header__submenu__floating__container__img}>
+                                            <Image
+                                                src="/ontego_subline.svg"
+                                                alt="arrow"
+                                                width={104}
+                                                height={55}
+                                                priority/>
+                                        </div>
+                                        <div className={style.header__submenu__wrap}>
+                                            <div className={style.header__submenu__wrap__dropdown}>
+                                                <span>Features</span>
+                                                <ul>
+                                                    <li>User Experience</li>
+                                                    <li>Template Principle</li>
+                                                    <li>SAP Integration</li>
+                                                    <li>Offline & Sync+</li>
+                                                    <li>ERP Extensions</li>
+                                                    <li>Ontego Designer</li>
+                                                </ul>
+                                            </div>
+                                            <div className={style.header__submenu__wrap__dropdown}>
+                                                <span>Areas of Application</span>
+                                                <ul>
+                                                    <li>Warehouse Logistics</li>
+                                                    <li>Production</li>
+                                                    <li>Inventory</li>
+                                                    <li>Service Management</li>
+                                                    <li>Maintenance</li>
+                                                    <li>Other Arease</li>
+                                                </ul>
+                                            </div>
+                                            <div className={style.header__submenu__wrap__dropdown}>
+                                                <span>Mobile Devices</span>
+                                                <p>Find mobile hardware for my employees.</p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Why Ontego ?</span>
+                                <div className={style.header__submenu__floating}>
+                                    <div className={style.header__submenu__floating__container}>
+                                        <div className={style.header__submenu__floating__container__img}>
+                                            <Image
+                                                src="/ontego_subline.svg"
+                                                alt="arrow"
+                                                width={104}
+                                                height={55}
+                                                priority/>
+                                        </div>
+                                        <div className={style.header__submenu__wrap}>
+                                            <div className={style.header__submenu__wrap__dropdown}>
+                                                <span>Good Reasons</span>
+                                                <p>Why companies rely on Ontego Business Mobility.</p>
+                                            </div>
+                                            <div className={style.header__submenu__wrap__dropdown}>
+                                                <span>In Use</span>
+                                                <ul>
+                                                    <li>Credentials</li>
+                                                </ul>
+                                            </div>
+                                            <div className={style.header__submenu__wrap__dropdown}>
+                                                <span>This is us</span>
+                                                <ul>
+                                                    <li>Pursue</li>
+                                                    <li>Locations</li>
+                                                    <li>Career</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Events</span>
+                                <div className={style.header__submenu__floating}>
+                                    <div className={style.header__submenu__floating__container}>
+                                        <div className={style.header__submenu__floating__container__img}>
+                                            <Image
+                                                src="/ontego_subline.svg"
+                                                alt="arrow"
+                                                width={104}
+                                                height={55}
+                                                priority/>
+                                        </div>
+                                        <div className={style.header__submenu__wrap}>
+                                            <div className={style.header__submenu__wrap__dropdown}>
+                                                <span>Trade Fairs & Congresses</span>
+                                                <ul>
+                                                    <li>VLB Logistics Congress 2024</li>
+                                                    <li>LogiMAT 2024</li>
+                                                </ul>                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span>Resources</span>
+                                <div className={style.header__submenu__floating}>
+                                    <div className={style.header__submenu__floating__container}>
+                                        <div className={style.header__submenu__floating__container__img}>
+                                            <Image
+                                                src="/ontego_subline.svg"
+                                                alt="arrow"
+                                                width={104}
+                                                height={55}
+                                                priority/>
+                                        </div>
+                                        <div className={style.header__submenu__wrap}>
+                                            <div className={style.header__submenu__wrap__dropdown}>
+                                                <span>Trade Fairs & Congresses</span>
+                                                <p>Information and tips about MDE for SAP and other ERP systems.</p>                                   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </menu>
                     <div className={style.header__req_demo}>
@@ -32,14 +157,14 @@ const Page = () => {
                     </div>
                 </div>
                 <div className={style.header__submenu}>
-                    <div className={style.header__submenu__daktau}>
+                    <div className={style.header__submenu__container}>
                         <Image
                             src="/ontego_subline.svg"
                             alt="arrow"
                             width={104}
                             height={55}
                             priority/>
-                        <div className={style.header__submenu__container}>
+                        <div className={style.header__submenu__menus}>
                             <ul>
                                 <li>
                                     <font>Features</font>
@@ -52,7 +177,17 @@ const Page = () => {
                                         <span>Ontego Designer</span>
                                     </div>
                                 </li>
-                                <li><font>Areas of Application</font></li>
+                                <li>
+                                    <font>Areas of Application</font>
+                                    <div>
+                                        <span>Warehouse Logistics</span> 
+                                        <span>Production</span>
+                                        <span>Inventory</span>
+                                        <span>Service Management</span>
+                                        <span>Maintenance</span>
+                                        <span>Other Areas</span>  
+                                    </div>
+                                </li>
                                 <li><font>Mobile Devices</font></li>
                             </ul>
                         </div>
@@ -66,13 +201,6 @@ const Page = () => {
                     ))
                 }
             </section>
-            {/* <section className="">
-                {
-                    [0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0].map(item => (
-                        <div><p>asd</p></div>
-                    ))
-                }
-            </section> */}
         </main>
     )
 }
