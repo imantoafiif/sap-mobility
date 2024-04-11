@@ -6,14 +6,7 @@ const Page = () => {
     return (
         <main className={style.container}>
             <Navbar/>
-            <Intro/>
-            {/* <section className={style.content}>
-                {
-                    [0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0].map(item => (
-                        <div><p>asd</p></div>
-                    ))
-                }
-            </section> */}
+            {/* <Intro/> */}
         </main>
     )
 }
