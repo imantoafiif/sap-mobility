@@ -69,15 +69,15 @@ const Products = () => {
                         <span>List Price</span>
                         <div className={style.slider_container}>
                             <span className={style.slider_container__input}>
-                                <input readOnly value={0}></input>
+                                <span className={style.slider_container__input__item}>0</span>
                                 <span>€</span>
                             </span>
                             <div className={style.rs_slider}>
                                 <Slider/>
                             </div>
                             <span className={style.slider_container__input}>
-                                <input readOnly value={3500}></input>
-                                <span>€</span>
+                            <span className={style.slider_container__input__item}>3500</span>
+                            <span>€</span>
                             </span>
                         </div>
                     </div>
@@ -85,15 +85,15 @@ const Products = () => {
                         <span>Weight</span>
                         <div className={style.slider_container}>
                             <span className={style.slider_container__input}>
-                                <input readOnly value={35}></input>
-                                <span>g</span>
+                            <span className={style.slider_container__input__item}>35</span>
+                            <span>g</span>
                             </span>
                             <div className={style.rs_slider}>
                                 <Slider/>
                             </div>
                             <span className={style.slider_container__input}>
-                                <input readOnly value={1300}></input>
-                                <span>g</span>
+                            <span className={style.slider_container__input__item}>1300</span>
+                            <span>g</span>
                             </span>
                         </div>
                         

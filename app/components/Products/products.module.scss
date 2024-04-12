@@ -35,7 +35,7 @@
                     flex-direction: row;
                     gap: 2px;
                     margin: 0;
-                    input {
+                    &__item {
                         width: 44px;
                         height: 26px;
                         text-align: center;
@@ -45,9 +45,11 @@
                         border: 1px solid #EAEAEB;
                         font-family: Arial, Helvetica, sans-serif;
                         font-size: 12px;
-                        &:focus {
-                            outline: none;
-                        }
+                        color: #2d333d;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: white;
                     }
                     & > span {
                         color: #96999E;
