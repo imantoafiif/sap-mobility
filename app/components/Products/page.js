@@ -1,22 +1,110 @@
 import style from './products.module.scss'
+import Slider from '../RangeSlider/page'
 
 const Products = () => {
+
+    const selection = [
+        { label: 'All devices' },
+        { label: 'Our favorites' },
+        { label: 'Rental equipment' },
+    ]
+
+    const device_type = [
+        { label: 'Handheld Computer' }, { label: 'Smartphone' }, { label: 'Forklift Terminal / Tablet' },
+        { label: 'Wearable / Handheld Scanner' }, { label: 'Printer' },
+    ]
+
+    const manufacturer = [
+        { label: 'ACD' }, { label: 'Advantech' }, { label: 'Bixolone' },
+        { label: 'Casio' }, { label: 'CAT' }, { label: 'Cipherlab' }, { label: 'Datalogic' },
+        { label: 'Cowardly' }, { label: 'Getac' }, { label: 'Gigaset' }, { label: 'Honeywell' },
+        { label: 'i.Safe Mobile' }, { label: 'iData' }, { label: 'Keyence' }, { label: 'KoamTac' },
+        { label: 'Newland' }, { label: 'Panasonic' }, { label: 'Point Mobile' }, { label: 'ProGlove' },
+        { label: 'Samsung' }, { label: 'zebra' },
+    ]
+
+    const operational = [
+        { label: 'Warehouse & Production' }, { label: 'Beverage Logistics' }, { label: 'Maintenance' },
+        { label: 'Field Service' }, { label: 'Healthcare' }, { label: 'Explosion-proof' },
+    ]
+
     return (
         <section className={style.container}>
             <div className={style.content}>
                 <div className={style.content__filter}>
                     <p>Selection</p>
-                    <span className={style.content__filter__chip__active}>All devices</span>
-                    <span className={style.content__filter__chip}>Our favorites</span>
-                    <span className={style.content__filter__chip}>Rental equipment</span>
+                    {
+                        selection.map(item => (
+                            // style.content__filter__chip__active
+                            <span className={style.content__filter__chip}>{ item.label }</span>
+                        ))
+                    }
                 </div>
                 <div className={style.content__filter}>
                     <p>Device Type</p>
-                    <span className={style.content__filter__chip}>Handheld Computer</span>
-                    <span className={style.content__filter__chip}>Smartphone</span>
-                    <span className={style.content__filter__chip}>Forklift Terminal / Tablet</span>
-                    <span className={style.content__filter__chip}>Wearable / Handheld Scanner</span>
-                    <span className={style.content__filter__chip}>Printer</span>
+                    {
+                        device_type.map(item => (
+                            <span className={style.content__filter__chip}>{ item.label }</span>
+                        ))
+                    }
+                </div>
+                <div className={style.content__filter}>
+                    <p>Manufacturer</p>
+                    {
+                        manufacturer.map(item => (
+                            <span className={style.content__filter__chip}>{ item.label }</span>
+                        ))
+                    }
+                </div>
+                <div className={style.content__filter}>
+                    <p>Operational Area</p>
+                    {
+                        operational.map(item => (
+                            <span className={style.content__filter__chip}>{ item.label }</span>
+                        ))
+                    }
+                </div>
+                <div className={style.content__filters}>
+                    <div>
+                        <span>List Price</span>
+                        <div className={style.slider_container}>
+                            <span className={style.slider_container__input}>
+                                <input readOnly value={0}></input>
+                                <span>€</span>
+                            </span>
+                            <div className={style.rs_slider}>
+                                <Slider/>
+                            </div>
+                            <span className={style.slider_container__input}>
+                                <input readOnly value={3500}></input>
+                                <span>€</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <span>Weight</span>
+                        <div className={style.slider_container}>
+                            <span className={style.slider_container__input}>
+                                <input readOnly value={35}></input>
+                                <span>g</span>
+                            </span>
+                            <div className={style.rs_slider}>
+                                <Slider/>
+                            </div>
+                            <span className={style.slider_container__input}>
+                                <input readOnly value={1300}></input>
+                                <span>g</span>
+                            </span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div className={style.content__filter_actions}>
+                    <span>Alle Angaben / Preise ohne Gewähr</span>
+                    <div>
+                        <span>Reset Filters</span>
+                        <span>Hide Filters</span>
+                    </div>
                 </div>
             </div>
         </section>

@@ -8,8 +8,15 @@ const Page = () => {
     return (
         <main className={style.container}>
             <Navbar/>
-            <Intro/>
-            <Products/>
+            <section className={style.content}>
+                <Intro/>
+                <Products/>
+                {/* {
+                    [0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0].map(item => (
+                        <div><p>asd</p></div>
+                    ))
+                } */}
+            </section>
         </main>
     )
 }
