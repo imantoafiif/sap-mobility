@@ -1,6 +1,7 @@
 import Intro from './components/Intro/page'
 import Navbar from './components/Navbar/page'
 import Products from './components/Products/page'
+import Footer from './components/Footer/page'
 
 import style from './page.module.scss'
 
@@ -11,11 +12,7 @@ const Page = () => {
             <section className={style.content}>
                 <Intro/>
                 <Products/>
-                {/* {
-                    [0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ,0 , 0, 0, 0, 0, 0].map(item => (
-                        <div><p>asd</p></div>
-                    ))
-                } */}
+                <Footer/>
             </section>
         </main>
     )
