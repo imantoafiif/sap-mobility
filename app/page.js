@@ -4,6 +4,7 @@ import React from 'react'
 import Intro from './components/Intro/page'
 import Navbar from './components/Navbar/page'
 import Products from './components/Products/page'
+import ProductsMobile from './components/ProductsMobile/page'
 import Footer from './components/Footer/page'
 import Hoverables from './components/Hoverables/page'
 
@@ -42,6 +43,7 @@ const Page = () => {
                 className={style.content}>
                 <Intro/>
                 <Products/>
+                {/* <ProductsMobile/> */}
                 <Footer/>
                 <Hoverables scrollToTop={scrollToTop} pos={scrollY} />
             </section>
