@@ -1,5 +1,6 @@
 const products = [
     {
+        id: "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
         is_favorite: true,
         is_rental: true,
         type: 'HANDHELD_COMPUTER',
@@ -21,6 +22,7 @@ const products = [
         manufacturer_url: 'https://www.zebra.com/de/de/products/mobile-computers/handheld/tc21-tc26.html',
     },
     {
+        id: "b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q",
         is_favorite: true,
         is_rental: true,
         type: 'HANDHELD_COMPUTER',
@@ -43,6 +45,7 @@ const products = [
         manufacturer_url: 'https://www.zebra.com/de/de/products/mobile-computers/handheld/mc3300.html',
     },
     {
+        id: "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r",
         is_favorite: true,
         is_rental: true,
         type: 'HANDHELD_COMPUTER',
@@ -65,6 +68,7 @@ const products = [
         manufacturer_url: 'https://www.zebra.com/de/de/products/spec-sheets/mobile-computers/handheld/tc5x-series.html',
     },
     {
+        id: "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s",
         is_favorite: true,
         is_rental: true,
         type: 'HANDHELD_COMPUTER',
@@ -87,6 +91,7 @@ const products = [
         manufacturer_url: 'https://www.zebra.com/de/de/products/mobile-computers/handheld/tc52-tc57-series-touch-computer.html',
     },
     {
+        id: "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t",
         is_favorite: false,
         is_rental: false,
         type: 'HANDHELD_COMPUTER',
@@ -108,6 +113,7 @@ const products = [
         manufacturer_url: 'https://www.casio-europe.com/de/produkte/mobile-datenerfassung/dt-x400/',
     },
     {
+        id: "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u",
         is_favorite: false,
         is_rental: false,
         type: 'SMARTPHONE',

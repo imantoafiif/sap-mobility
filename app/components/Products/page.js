@@ -21,6 +21,7 @@ const Products = () => {
     const [selectedDeviceType, setSelectedDeviceType] = React.useState([])
     const [selectedManufacturer, setSelectedManufacturer] = React.useState([])
     const [selectedOperationalArea, setSelectedOperationalArea] = React.useState([])
+    const [selectedItem, setSelectedItem] = React.useState(null)
 
     const handleExpansionToggle = () => {
         setExpansion(!expand)
@@ -79,6 +80,17 @@ const Products = () => {
         setSelectedOperationalArea([...selectedOperationalArea, v])
     }
 
+    const handleSelectedItem = v => {
+        if(v < 0) {
+            setSelectedItem({
+                ...selectedItem,
+                key: -1,
+            })
+            return
+        }
+        setSelectedItem(v)
+    }
+
     const setupData = () => {
         let pivot = {
             key: 0,
@@ -119,6 +131,7 @@ const Products = () => {
             }
         }
         setFilteredProducts(structure)
+        console.log(filteredProducts)
     }
 
     React.useEffect(() => {
@@ -131,7 +144,6 @@ const Products = () => {
         price,
         weight
     ])
-
 
     return (
         <section className={style.container}>
@@ -247,12 +259,20 @@ const Products = () => {
             </div>
             <div className={style.filtered}>
                 {
-                    filteredProducts.map(product => (
-                        <div className={style.filtered__container}>
+                    filteredProducts.map((product, key) => (
+                        <div
+                            key={key} 
+                            className={style.filtered__container}>
                             <div className={style.filtered__lists}>
                                 {
                                     product.items.map(item => (
-                                        <div className={style.filtered__card}>
+                                        <div 
+                                            key={item.id}
+                                            onClick={() => handleSelectedItem({
+                                                key,
+                                                item
+                                            })}
+                                            className={style.filtered__card}>
                                             <div className={style.filtered__card__item}>
                                                 <div className={style.filtered__card__item__hov}></div>
                                                 <div className={style.filtered__card__item__chips}>
@@ -278,38 +298,49 @@ const Products = () => {
                                     ))
                                 }
                             </div>
-                            <div className={style.filtered__detail}>
-                                <span>
-                                    <FontAwesomeIcon icon={faX} />
-                                </span>
-                                <div className={style.filtered__detail__container}>
-                                    <img src='https://skystatic08.atmos.id/11018/2049634327/2003088216/2012441964/zebra_mc3300@2x.jpeg'></img>
-                                    <div className={style.filtered__detail__container__specs}>
-                                        <h6>Zebra MC3300X</h6>
-                                        <ul>
-                                            <li>Price: from 1100 euros</li>
-                                            <li>Display: 4 inches</li>
-                                            <li>Weight: 445 grams</li>
-                                            <li>Available accessories: various engines - very powerful 2D imager, configuration with pistol grip, rotating head, 0° or 45° scan</li>
-                                        </ul>
-                                        <div className={style.filtered__detail__container__chips_container}>
-                                            <span className={style.filter__filter__chip}>Warehouse & Production</span>
-                                            <span className={style.filter__filter__chip}>Field Service</span>
+                            {
+                                (
+                                    <div className={`
+                                        ${style.filtered__detail} 
+                                        ${selectedItem?.key === key ? style.display : style.hidden}
+                                    `}>
+                                        <span onClick={() => handleSelectedItem(-1)}>
+                                            <FontAwesomeIcon icon={faX} />
+                                        </span>
+                                        <div className={style.filtered__detail__container}>
+                                            <img src={selectedItem?.item?.image}></img>
+                                            <div className={style.filtered__detail__container__specs}>
+                                                <h6>{ selectedItem?.item?.name }</h6>
+                                                <ul>
+                                                    {
+                                                        selectedItem?.item?.specifications.map((spec, key) => (
+                                                            <li key={key}>{ spec }</li>
+                                                        ))
+                                                    }
+                                                </ul>
+                                                <div className={style.filtered__detail__container__chips_container}>
+                                                    {
+                                                        selectedItem?.item?.operational_area.map(op => (
+                                                            <span key={op.value} className={style.filter__filter__chip}>{ op.label }</span>
+                                                        ))
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div className={style.filtered__detail__container__container}>
+                                                <div className={style.filtered__detail__container__desc}>
+                                                    <p>Our assessment</p>
+                                                    <h5>{ selectedItem?.item?.assessment }</h5>
+                                                </div>
+                                                <a 
+                                                    target='_blank' 
+                                                    href={selectedItem?.item?.manufacturer_url}>
+                                                    To the manufacturer
+                                                    <FontAwesomeIcon icon={faArrowRightLong} />                            </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className={style.filtered__detail__container__container}>
-                                        <div className={style.filtered__detail__container__desc}>
-                                            <p>Our assessment</p>
-                                            <h5>The top device in the mid-range storage class with a large display and full keyboard. Auto-Range Imager enables multiple scans and scans up to 21 m away.</h5>
-                                        </div>
-                                        <a 
-                                            target='_blank' 
-                                            href='https://google.com'>
-                                            To the manufacturer
-                                            <FontAwesomeIcon icon={faArrowRightLong} />                            </a>
-                                    </div>
-                                </div>
-                            </div>
+                                )
+                            }
                         </div>
                     ))
                 }
