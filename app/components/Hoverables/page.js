@@ -1,3 +1,5 @@
+'use client'
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faX,
@@ -6,12 +8,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import style from './hoverables.module.scss'
-import React, { useState } from "react";
+import React from "react";
 
 const Hoverables = ({ scrollToTop, pos }) => {
 
-    const [popup, setPopup] = useState(false)
-    const [popupRead, setPopupRead] = useState(false)
+    const [popup, setPopup] = React.useState(false)
+    const [popupRead, setPopupRead] = React.useState(false)
 
     const handlePopup = v => {
         setPopupRead(v)
