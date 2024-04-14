@@ -6,12 +6,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import style from './hoverables.module.scss'
-import React from "react";
+import React, { useState } from "react";
 
 const Hoverables = ({ scrollToTop, pos }) => {
 
-    const [popup, setPopup] = React.useState(false)
-    const [popupRead, setPopupRead] = React.useState(false)
+    const [popup, setPopup] = useState(false)
+    const [popupRead, setPopupRead] = useState(false)
 
     const handlePopup = v => {
         setPopupRead(v)
