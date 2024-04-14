@@ -17,7 +17,7 @@ const Hoverables = ({ scrollToTop, pos }) => {
         setPopupRead(v)
     }
 
-    const handleAgreement = va => {
+    const handleAgreement = v => {
         
     }
 
