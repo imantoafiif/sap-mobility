@@ -167,7 +167,13 @@
                     background: linear-gradient(210.75deg, $main-dark 0%, #00527f 100%);
                     color: white;
                     transition: all 0.3s ease;
+                }
 
+                &.disabled {
+                    background: #efeff0;
+                    cursor: default;
+                    pointer-events: none;
+                    color: #d4d5d6;
                 }
             }
         }

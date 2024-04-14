@@ -18,7 +18,10 @@ const Products = () => {
     const [weight, setWeightFilter] = React.useState([35, 1300])
     const [expand, setExpansion] = React.useState(false)
     const [filteredProducts, setFilteredProducts] = React.useState([])
-    const [selections, setSelections] = React.useState(['ALL_DEVICES'])
+    const [deviceTypes, setDeviceTypes] = React.useState(filters.device_type)
+    const [manufacturers, setManufacturers] = React.useState(filters.manufacturer)
+    const [operationals, setOperationals] = React.useState(filters.operational)
+    const [selectedSelections, setSelectedSelections] = React.useState(['ALL_DEVICES'])
     const [selectedDeviceType, setSelectedDeviceType] = React.useState([])
     const [selectedManufacturer, setSelectedManufacturer] = React.useState([])
     const [selectedOperationalArea, setSelectedOperationalArea] = React.useState([])
@@ -30,21 +33,21 @@ const Products = () => {
 
     const handleSelections = v => {
         if(v == 'ALL_DEVICES') {
-            setSelections([v])
+            setSelectedSelections([v])
             return
         }
-        if(selections[0] === 'ALL_DEVICES') {
-            setSelections([v])
+        if(selectedSelections[0] === 'ALL_DEVICES') {
+            setSelectedSelections([v])
         } else {
-            const is_exist = selections.indexOf(v)
+            const is_exist = selectedSelections.indexOf(v)
             if(is_exist != -1) {
-                let s = [...selections]
+                let s = [...selectedSelections]
                 s.splice(is_exist, 1)
                 if(s.length == 0) s = ['ALL_DEVICES']
-                setSelections(s)
+                setSelectedSelections(s)
                 return
             }
-            setSelections([...selections, v])
+            setSelectedSelections([...selectedSelections, v])
         }
     }
 
@@ -100,7 +103,7 @@ const Products = () => {
         const structure = []
         for(let i = 0; i < products.length; ++i) {
             const item = products[i]
-            if(selections[0] === 'ALL_DEVICES') {
+            if(selectedSelections[0] === 'ALL_DEVICES') {
                 if(
                     (selectedDeviceType.length ? selectedDeviceType.includes(item.type) : true) &&
                     (selectedManufacturer.length ? selectedManufacturer.includes(item.manufacturer) : true) && 
@@ -112,8 +115,8 @@ const Products = () => {
                 }
             } else {
                 if(
-                    (selections.includes('OUR_FAVORITES') ? item.is_favorite : true) && 
-                    (selections.includes('RENTAL_EQUIPMENT') ? item.is_rental : true) && 
+                    (selectedSelections.includes('OUR_FAVORITES') ? item.is_favorite : true) && 
+                    (selectedSelections.includes('RENTAL_EQUIPMENT') ? item.is_rental : true) && 
                     (selectedDeviceType.length ? selectedDeviceType.includes(item.type) : true) && 
                     (selectedManufacturer.length ? selectedManufacturer.includes(item.manufacturer) : true) &&
                     (selectedOperationalArea.length ? selectedOperationalArea.some(element => item.operational_area.some(obj => obj.value === element)) : true) &&
@@ -137,13 +140,32 @@ const Products = () => {
     React.useEffect(() => {
         setupData()
     }, [
-        selections, 
+        selectedSelections, 
         selectedDeviceType, 
         selectedManufacturer,
         selectedOperationalArea,
         price,
         weight
     ])
+
+    React.useEffect(() => {
+        const flat = filteredProducts.flatMap(item => item.items)
+        const all_operational_area = [].concat(...flat.map(item => item.operational_area)).map(item => item.value)
+        
+        setDeviceTypes(filters.device_type.map(item => ({...item, enabled: flat.map(i => i.type).includes(item.value)})))
+        setOperationals(filters.operational.map(item => ({...item, enabled: all_operational_area.includes(item.value)})))
+        setManufacturers(filters.manufacturer.map(item => ({...item, enabled: flat.map(i => i.manufacturer).includes(item.value)})))
+        
+        if(selectedManufacturer.length > 0) {
+            setManufacturers(filters.manufacturer) 
+        }
+        if(selectedDeviceType.length > 0) {
+            setDeviceTypes(filters.device_type) 
+        }
+        if(selectedOperationalArea.length > 0) {
+            setOperationals(filters.operational) 
+        }
+    }, [filteredProducts])
 
     return (
         <section className={style.container}>
@@ -157,7 +179,7 @@ const Products = () => {
                                 key={item.value} 
                                 className={`
                                     ${style.filter__filter__chip} 
-                                    ${selections.includes(item.value) ? style.active : ''}
+                                    ${selectedSelections.includes(item.value) ? style.active : ''}
                                 `}>
                                 { item.label }
                             </span>
@@ -167,13 +189,14 @@ const Products = () => {
                 <div className={style.filter__filter}>
                     <p>Device Type</p>
                     {
-                        filters.device_type.map(item => (
+                        deviceTypes.map(item => (
                             <span 
                                 onClick={() => handleDeviceType(item.value)}
                                 key={item.value} 
                                 className={`
                                     ${style.filter__filter__chip} 
                                     ${selectedDeviceType.includes(item.value) ? style.active : ''}
+                                    ${item.enabled ? '' : style.disabled}
                                 `}>
                                 { item.label }
                             </span>
@@ -184,13 +207,14 @@ const Products = () => {
                     <div className={style.filter__filter}>
                         <p>Manufacturer</p>
                         {
-                            filters.manufacturer.map(item => (      
+                            manufacturers.map(item => (      
                                 <span 
                                     onClick={() => handleManufacturer(item.value)}
                                     key={item.value} 
                                     className={`
                                         ${style.filter__filter__chip} 
                                         ${selectedManufacturer.includes(item.value) ? style.active : ''}
+                                        ${item.enabled ? '' : style.disabled}
                                     `}>
                                     { item.label }
                                 </span>                            
@@ -200,15 +224,16 @@ const Products = () => {
                     <div className={style.filter__filter}>
                         <p>Operational Area</p>
                         {
-                            filters.operational.map(item => (
+                            operationals.map(item => (
                                 <span 
                                     onClick={() => handleOperationalArea(item.value)}
                                     key={item.value} 
                                     className={`
                                         ${style.filter__filter__chip} 
                                         ${selectedOperationalArea.includes(item.value) ? style.active : ''}
+                                        ${item.enabled ? '' : style.disabled}
                                     `}>
-                                    { item.label }
+                                    { item.label } 
                                 </span>                               
                             ))
                         }
