@@ -9,14 +9,16 @@ import {
 const Navbar = () => {
     return (
         <header className={style.header}>
-            <div className={style.kontol}>
-                <Image
-                    src="/ontego_business_mobi.svg"
-                    alt="logo"
-                    width={165}
-                    height={22}
-                    priority/>
-                <FontAwesomeIcon icon={faBars} />
+            <div className={style.nav_container}>
+                <div className={style.nav_container__header}>
+                    <Image
+                        src="/ontego_business_mobi.svg"
+                        alt="logo"
+                        width={165}
+                        height={22}
+                        priority/>
+                    <FontAwesomeIcon icon={faBars} />
+                </div>
                 <menu>
                     <ul className={style.header__menu}>
                         <li>

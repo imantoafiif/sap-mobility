@@ -380,6 +380,18 @@
             gap: 5px;
             display: flex;
             flex-direction: column;
+            transition: all .5s ease;
+            transform: scale(1);
+            animation: grow .3s alternate;
+
+            @keyframes grow {
+                0% {
+                    transform: scale(0); /* Initial size */
+                }
+                100% {
+                    transform: scale(1); /* Final size */
+                }
+            }
 
             &__item {
                 height: 255px;

@@ -337,7 +337,10 @@ const Products = () => {
                                                         )
                                                     }
                                                 </div>
-                                                <img src={item.image}></img>
+                                                <img
+                                                    alt='produt-image' 
+                                                    src={item.image}>
+                                                </img>
                                             </div>
                                             <p>{ item.name }</p>
                                         </div>

@@ -1,18 +1,50 @@
-.container {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+// .container {
+//     height: 100vh;
+//     display: flex;
+//     flex-direction: column;
+// }
 
-.kontol {
+.nav_container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 1170px;
+    transition: all .5s ease;
+    
 
-    & > svg {
-        display: none;
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 15px;
+
+        & > svg {
+            display: none;
+        }
+
+        @media screen and (max-width: 1199px) {
+            & > img {
+                height: 22px;
+                width: 131.66px;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            width: 100%;
+            padding: 0;
+
+            & > img {
+                height: 22px;
+                width: 225.86px;
+            }
+
+            & > svg {
+                display: inline;
+                color: white;
+            }
+        }
     }
 
     &:not(:hover) {
@@ -42,14 +74,7 @@
         width: 100%;
         justify-content: space-around;
         padding: 13px;
-        & > svg {
-            display: inline;
-            color: white;
-        }
-        & > img { 
-            height: 22px;
-            width: auto;
-        }
+     
         menu {
             display: none;
         }
