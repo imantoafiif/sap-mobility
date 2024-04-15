@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import style from './navbar.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
