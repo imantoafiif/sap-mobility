@@ -16,6 +16,7 @@ const Navbar = () => {
                     width={165}
                     height={22}
                     priority/>
+                <FontAwesomeIcon icon={faBars} />
                 <menu>
                     <ul className={style.header__menu}>
                         <li>
@@ -154,8 +155,17 @@ const Navbar = () => {
                         height={30}
                         priority/>
                 </div>
-                <FontAwesomeIcon icon={faBars} />
             </div>
+            {/* <div className={style.mobile_nav}>
+                <div className={style.mobile_nav__header}>
+                    <Image
+                        src="/ontego_business_mobi.svg"
+                        alt="logo"
+                        width={225.86}
+                        height={22}
+                        priority/>
+                </div>
+            </div> */}
             <div className={style.header__submenu}>
                 <div className={style.header__submenu__container}>
                     <Image

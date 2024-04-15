@@ -95,12 +95,27 @@ const Products = () => {
         setSelectedItem(v)
     }
 
+    const resetFilter = () => {
+        setPriceFilter([0, 3500])
+        setWeightFilter([35, 1300])
+        setSelectedDeviceType([])
+        setSelectedManufacturer([])
+        setSelectedOperationalArea([])
+    }
+
     const setupData = () => {
         let pivot = {
             key: 0,
             items: []
         }
         const structure = []
+        //close the product detail
+        if(selectedItem) {
+            setSelectedItem({
+                ...selectedItem,
+                key: -1,
+            })
+        }
         for(let i = 0; i < products.length; ++i) {
             const item = products[i]
             if(selectedSelections[0] === 'ALL_DEVICES') {
@@ -247,7 +262,10 @@ const Products = () => {
                                     <span>€</span>
                                 </span>
                                 <div className={style.rs_slider}>
-                                    <Slider range={[0, 3500]} onValueChange={setPriceFilter} />
+                                    <Slider 
+                                        currentValue={price}
+                                        range={[0, 3500]} 
+                                        onValueChange={setPriceFilter} />
                                 </div>
                                 <span className={style.slider_container__input}>
                                 <span className={style.slider_container__input__item}>{ price[1] }</span>
@@ -263,7 +281,10 @@ const Products = () => {
                                 <span>g</span>
                                 </span>
                                 <div className={style.rs_slider}>
-                                    <Slider range={[35, 1300]} onValueChange={setWeightFilter} />
+                                    <Slider  
+                                        currentValue={weight}
+                                        range={[35, 1300]} 
+                                        onValueChange={setWeightFilter} />
                                 </div>
                                 <span className={style.slider_container__input}>
                                 <span className={style.slider_container__input__item}>{ weight[1] }</span>
@@ -277,7 +298,7 @@ const Products = () => {
                 <div className={style.filter__filter_actions}>
                     <span>Alle Angaben / Preise ohne Gewähr</span>
                     <div>
-                        <button>Reset Filters</button>
+                        <button onClick={resetFilter}>Reset Filters</button>
                         <button onClick={handleExpansionToggle}>{ expand ? 'Hide' : 'Show More' } Filters</button>
                     </div>
                 </div>
@@ -332,7 +353,10 @@ const Products = () => {
                                         <span onClick={() => handleSelectedItem(-1)}>
                                             <FontAwesomeIcon icon={faX} />
                                         </span>
-                                        <div className={style.filtered__detail__container}>
+                                        <div className={`
+                                            ${style.filtered__detail__container} 
+                                            ${selectedItem?.key === key ? style.show : style.fade}
+                                        `}>
                                             <img src={selectedItem?.item?.image}></img>
                                             <div className={style.filtered__detail__container__specs}>
                                                 <h6>{ selectedItem?.item?.name }</h6>
@@ -360,7 +384,8 @@ const Products = () => {
                                                     target='_blank' 
                                                     href={selectedItem?.item?.manufacturer_url}>
                                                     To the manufacturer
-                                                    <FontAwesomeIcon icon={faArrowRightLong} />                            </a>
+                                                    <FontAwesomeIcon icon={faArrowRightLong} />                            
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -370,6 +395,15 @@ const Products = () => {
                     ))
                 }
             </div>
+            {/* <div className={style.test}>
+                <p className={`${style.grid_test}`}>abc</p>
+                <p className={style.grid_test}>abc</p>
+                <p className={style.grid_test}>abc</p>
+                <p className={style.grid_test}>abc</p>
+                <p className={style.grid_test}>abc</p>
+                <p className={style.grid_test}>abc</p>
+
+            </div> */}
             <div className={style.container__info}>
                 <h5>Unfortunately we don't have enough space here...</h5>
                 <p>... for our hardware finder. But feel free to visit this page while having your morning coffee at work and browse through recommendations, overviews and helpful links to the latest mobile devices.</p>

@@ -7,7 +7,8 @@ import style from './slider.module.scss'
 
 const Slider = ({ 
     range = [0, 100], 
-    onValueChange 
+    onValueChange,
+    currentValue
 }) => {
 
     const [value, setValue] = React.useState(range)
@@ -16,7 +17,7 @@ const Slider = ({
         setValue(v)
         onValueChange(value)
     }
-
+    
     return (
         <RangeSlider 
             min={range[0]}
@@ -25,7 +26,7 @@ const Slider = ({
                 setSliderValue(value)
             }}
             constraint={([start, end]) => start < end && end > start}
-            value={value}
+            value={currentValue}
             defaultValue={value}
             tooltip={false}/>
     )

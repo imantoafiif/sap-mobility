@@ -267,6 +267,15 @@
                 flex-direction: row;
                 gap: 30px;
                 width: 940px;
+                transition: opacity .8s ease;
+
+                &.show {
+                    opacity: 1;
+                }
+
+                &.fade {
+                    opacity: 0;
+                }
     
                 &__chips_container {
                     display: flex;
@@ -320,7 +329,6 @@
                         display: flex;
                         align-items: center;
                         gap: 15px;
-                        // border-bottom: 2px solid black;
                     }
                 }
     
@@ -449,4 +457,26 @@
             display: none;
         }
     }
+
+    .test {
+        display: flex;
+        gap: 20px;
+        transition: grid-template-columns 5s ease, transform 5s ease;
+        flex-wrap: wrap;
+        width: 500px;
+    }
+
+    // .grid_test {
+    //     background-color: #f1f1f1;
+    //     padding: 20px;
+    //     text-align: center;
+    //     transition: transform 5s ease;
+
+    //     &.hidden {
+    //         transform: translate(-100%, -100%);
+    //         opacity: 0;
+    //     }
+    // }
+
+    
 }
