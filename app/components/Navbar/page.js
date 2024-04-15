@@ -4,9 +4,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars
 } from "@fortawesome/free-solid-svg-icons";
-
+import React from 'react';
 
 const Navbar = () => {
+
+    const [expand, setExpansion] = React.useState(false)
+
+    const toggleExpansion = () => {
+        setExpansion(!expand)
+    }
+
     return (
         <header className={style.header}>
             <div className={style.nav_container}>
@@ -17,7 +24,7 @@ const Navbar = () => {
                         width={165}
                         height={22}
                         priority/>
-                    <FontAwesomeIcon icon={faBars} />
+                    <FontAwesomeIcon onClick={toggleExpansion} icon={faBars} />
                 </div>
                 <menu>
                     <ul className={style.header__menu}>
@@ -158,16 +165,11 @@ const Navbar = () => {
                         priority/>
                 </div>
             </div>
-            {/* <div className={style.mobile_nav}>
-                <div className={style.mobile_nav__header}>
-                    <Image
-                        src="/ontego_business_mobi.svg"
-                        alt="logo"
-                        width={225.86}
-                        height={22}
-                        priority/>
-                </div>
-            </div> */}
+            <div className={`
+                ${style.mobile_nav} 
+                ${expand ? style.display : ''}
+            `}>    
+            </div>
             <div className={style.header__submenu}>
                 <div className={style.header__submenu__container}>
                     <Image
