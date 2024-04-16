@@ -97,36 +97,123 @@
         height: calc(100% - 48px);
     }
 
-    & > div {
-        padding: 24px;
-        margin: 50px 0;
+    &__container {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+        flex-direction: column;
+        height: 100%;
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        height: 69px;
-        border-top: 1px solid white;
-
-        li {
-            flex-grow: 1;
+        & > ul {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            background: #0077b6;
-            font-size: 13px;
-            transition: all .3s ease;
-            font-weight: 500;
+            flex-direction: row;
+            border-top: 1px solid white;
+    
+            li {
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                background: #0077b6;
+                font-size: 13px;
+                transition: all .3s ease;
+                font-weight: 500;
+                height: 69px;
+            }
+    
+            .active {
+                color: #0077b6;
+                background: white;
+            }
         }
 
-        .active {
-            color: #0077b6;
-            background: white;
+        .products {
+            padding: 24px;
+            max-height: 100%;
+            overflow-y: auto;
+            scrollbar-width: none;
+            // margin: 52px 0;
+
+            &__menus {
+                display: flex;
+                flex-direction: column;
+
+                &__header {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 55%;
+                    align-items: center;
+                    font-size: 18px;
+                    color: #0077b6;
+                    margin-bottom: 36px;
+                }
+    
+                &__dropdown {
+                    text-align: center;
+                    overflow: hidden;
+                    transition: all .5s ease;
+                    height: 100%;
+                    max-height: 0px;
+
+                    // text-align: center;
+                    // max-height: 0px;
+                    // overflow: hidden;
+                    // transition: all .5s ease;
+    
+                    & > ul {
+                        margin: 0 20%;
+                        margin-bottom: 30px;
+    
+                        li {
+                            background: white;
+                            height: 36px;
+                            color: #383d47;
+                            font-size: 12px;
+                            font-weight: 300;
+                            letter-spacing: 0.2px;
+                            vertical-align: middle;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+    
+                    &__title {
+                        font-family: 'Times New Roman', Times, serif;
+                        color: #2d333d;
+                        font-size: 20px;
+                        font-weight: bold;
+                        line-height: 26px;
+                        margin-bottom: 9px;
+                    }
+                }
+    
+                .up {
+                    transition: all .2s ease;
+                    transform: rotate(180deg);
+                }
+    
+                .down {
+                    transition: all .2s ease;
+                    transform: rotate(0deg);
+                }
+    
+                .expand {
+                    transition: max-height 2s ease;
+                    max-height: 9999px;
+                }
+            }
+
+            &__request {
+                border: 2px solid #0077b6;
+                font-size: 14px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                color: #0077b6;
+                font-weight: 500;
+                padding: 0 16px;
+            }
         }
     }
 }

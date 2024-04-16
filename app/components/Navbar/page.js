@@ -5,16 +5,21 @@ import style from './navbar.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
-  faChevronUp
+  faChevronDown
 } from "@fortawesome/free-solid-svg-icons";
 import React from 'react';
 
 const Navbar = () => {
 
     const [expand, setExpansion] = React.useState(false)
+    const [mobileExpand, setMobileExpansion] = React.useState(false)
 
     const toggleExpansion = () => {
         setExpansion(!expand)
+    }
+
+    const toggleMobileExpansion = () => {
+        setMobileExpansion(!mobileExpand)
     }
 
     return (
@@ -47,23 +52,27 @@ const Navbar = () => {
                                         <div className={style.header__submenu__wrap__dropdown}>
                                             <span>Features</span>
                                             <ul>
-                                                <li>User Experience</li>
-                                                <li>Template Principle</li>
-                                                <li>SAP Integration</li>
-                                                <li>Offline & Sync+</li>
-                                                <li>ERP Extensions</li>
-                                                <li>Ontego Designer</li>
+                                                {
+                                                    ['User Experience', 'Template Principle', 'Sap Integration', 'Offline & Sync+', 'ERP Extensions', 'Ontego Designer']
+                                                    .map((item, key) => (
+                                                        <li key={key}>
+                                                            <a href='https://google.com'>{ item }</a>
+                                                        </li>
+                                                    ))
+                                                }
                                             </ul>
                                         </div>
                                         <div className={style.header__submenu__wrap__dropdown}>
                                             <span>Areas of Application</span>
                                             <ul>
-                                                <li>Warehouse Logistics</li>
-                                                <li>Production</li>
-                                                <li>Inventory</li>
-                                                <li>Service Management</li>
-                                                <li>Maintenance</li>
-                                                <li>Other Arease</li>
+                                            {
+                                                ['Warehouse Logistcs', 'Production', 'Inventory', 'Service Management', 'Maintenance', 'Other Areas']
+                                                .map((item, key) => (
+                                                    <li key={key}>
+                                                        <a href='https://google.com'>{ item }</a>
+                                                    </li>
+                                                ))
+                                            }
                                             </ul>
                                         </div>
                                         <div className={style.header__submenu__wrap__dropdown}>
@@ -172,19 +181,67 @@ const Navbar = () => {
                 ${style.mobile_nav} 
                 ${expand ? style.display : ''}
             `}>    
-                <ul>
-                    <li className={style.active}>Products</li>
-                    <li>Why ?</li>
-                    <li>Events</li>
-                    <li>Resources</li>
-                </ul>
-                <div>
-                    <Image
-                        src="/ontego_subline.svg"
-                        alt="arrow"
-                        width={104}
-                        height={55}
-                        priority/>
+                <div className={style.mobile_nav__container}>
+                    <ul>
+                        <li className={style.active}>Products</li>
+                        <li>Why ?</li>
+                        <li>Events</li>
+                        <li>Resources</li>
+                    </ul>
+                    <div className={style.products}>
+                        <div className={style.products__menus}>
+                            <div className={style.products__menus__header}>
+                                <Image
+                                    src="/ontego_subline.svg"
+                                    alt="arrow"
+                                    width={104}
+                                    height={55}
+                                    priority/>
+                                <FontAwesomeIcon 
+                                    onClick={toggleMobileExpansion}
+                                    className={`${mobileExpand ? style.up : style.down}`}
+                                    icon={faChevronDown} />
+                            </div>
+                            <div className={`${style.products__menus__dropdown} ${mobileExpand ? style.expand : ''}`}>
+                                <p className={style.products__menus__dropdown__title}>Features</p>
+                                <ul>
+                                    {
+                                        ['User Experience', 'Template Principle', 'Sap Integration', 'Offline & Sync+', 'ERP Extensions', 'Ontego Designer']
+                                        .map((item, key) => (
+                                            <li key={key}>
+                                                <a href='https://google.com'>{ item }</a>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                                <p className={style.products__menus__dropdown__title}>Areas of Application</p>
+                                <ul>
+                                    {
+                                        ['Warehouse Logistcs', 'Production', 'Inventory', 'Service Management', 'Maintenance', 'Other Areas']
+                                        .map((item, key) => (
+                                            <li key={key}>
+                                                <a href='https://google.com'>{ item }</a>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                                <p className={style.products__menus__dropdown__title}>Mobile Devices</p>
+                                <ul>
+                                    {
+                                        ['Warehouse Logistcs', 'Production', 'Inventory', 'Service Management', 'Maintenance', 'Other Areas']
+                                        .map((item, key) => (
+                                            <li key={key}>
+                                                <a href='https://google.com'>{ item }</a>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <div className={style.products__request}>
+                            Request a Demo
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className={style.header__submenu}>
