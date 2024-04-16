@@ -4,7 +4,8 @@ import Image from 'next/image'
 import style from './navbar.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBars
+  faBars,
+  faChevronUp
 } from "@fortawesome/free-solid-svg-icons";
 import React from 'react';
 
@@ -171,6 +172,20 @@ const Navbar = () => {
                 ${style.mobile_nav} 
                 ${expand ? style.display : ''}
             `}>    
+                <ul>
+                    <li className={style.active}>Products</li>
+                    <li>Why ?</li>
+                    <li>Events</li>
+                    <li>Resources</li>
+                </ul>
+                <div>
+                    <Image
+                        src="/ontego_subline.svg"
+                        alt="arrow"
+                        width={104}
+                        height={55}
+                        priority/>
+                </div>
             </div>
             <div className={style.header__submenu}>
                 <div className={style.header__submenu__container}>

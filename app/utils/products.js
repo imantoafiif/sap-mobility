@@ -133,7 +133,121 @@ const products = [
         ],
         assessment: 'Modern and robust: The device is more powerful than its predecessors and has Android 11, 6 GB of RAM and 128 GB of storage. It should be noted that the screen brightness still needs improvement in direct sunlight.',
         manufacturer_url: 'https://www.catphones.com/de-de/cat-s53/',
-    }
+    },
+    {
+        id: "d9b6cff8-0493-416d-b430-3440297b7580",
+        is_favorite: true,
+        is_rental: false,
+        type: 'FORKLIFT_TERMINAL_TABLET',
+        manufacturer: 'ZEBRA',
+        operational_area: [
+            { label: 'Maintenance', value: 'MAINTENANCE' },
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' }, 
+            { label: 'Field Service', value: 'FIELD_SERVICE' }, 
+        ],
+        price: 620,
+        weight: 690,
+        name: 'Zebra ET40/45',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2004413200/2012441964/Zebra ET45_ET40.png',
+        specifications: [
+            'Price: from 620 euros',
+            'Display: 10 inches',
+            'Weight: 690 grams',
+            'Available accessories: SE4100, SE4710 or SE55 1D/2D extended range scanning module, 4 or 8 GB RAM, support up to Android 14, Wi-FI 6, 5G (ET45), 8"/10" (optional), IP65, 7600mAh removable battery'
+        ],
+        assessment: 'The Zebra ET40 and Zebra ET45 are modern rugged tablets for indoor and outdoor use. Both tablets are available in 8" or 10" and are very robust. Both models also contain the latest hardware and software, with a scanner and, with the ET45, also mobile communications up to 5G.',
+        manufacturer_url: 'https://www.zebra.com/de/de/products/spec-sheets/tablets/et40-et45.html',
+    },
+    {
+        id: "55c70f89-d4a4-4d12-abd5-df2dd73c8f78",
+        is_favorite: false,
+        is_rental: false,
+        type: 'HANDHELD_COMPUTER',
+        manufacturer: 'DATALOGIC',
+        operational_area: [
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' },
+            { label: 'Field Service', value: 'FIELD_SERVICE' }
+        ],
+        price: 800,
+        weight: 285,
+        name: 'Datalogic memor 11',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2004895232/2012441964/datalogic_memor10@2x.jpg',
+        specifications: [
+            'Price: from 800 euros',
+            'Display: 5 inches',
+            'Weight: 285 grams',
+            'Available accessories: 1D/2D imager with Green Spot technology (visual scan confirmation), contactless charging possible - replaceable battery, upgradeable to Android 14, mobile radio optional, IP65'
+        ],
+        assessment: 'The Memor 11 from Datalogic is a high-performance device for warehouse and field service applications. The technical parameters are convincing, the Android system is up to date. The device competes in its class against the CT60XP from Honeywell or the TC52x from Zebra.',
+        manufacturer_url: 'https://www.datalogic.com/deu/einzelhandel-industrielle-automation-transport-logistik-gesundheitswesen-weitere-anwendungen/mobilcomputer/memor-11-pd-934.html',
+    },
+    {
+        id: "11db3ca5-3eb6-4b6d-8f50-f4c383d23da3",
+        is_favorite: false,
+        is_rental: false,
+        type: 'WEARABLE_HANDHELD_SCANNER',
+        manufacturer: 'POINT_MOBILE',
+        operational_area: [
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' },
+        ],
+        price: 600,
+        weight: 49,
+        name: 'Point Mobile PM5',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2012518994/2012441964/Point Mobile PM5.png',
+        specifications: [
+            'Price: from 600 euros',
+            'Display: 0 inches',
+            'Weight: 49 grams',
+            'Available accessories: Honeywell N6703 Ultra slim 1D/2D Barcode Scan Engine, 510mAh (Standard), 700mAh (Optional), IP65, Bluetooth, NFC'
+        ],
+        assessment: 'The Point Mobile PM5 is a compact and lightweight ring scanner. It impresses with high scanning performance and speed. The battery lasts 9 hours as standard; The operating time can be extended with an additional battery',
+        manufacturer_url: 'https://www.pointmobile.com/de/products-mobilecomputers/PM5',
+    },
+    {
+        id: "8e84c6de-9943-4822-870d-198cba02ac43",
+        is_favorite: false,
+        is_rental: false,
+        type: 'HANDHELD_COMPUTER',
+        manufacturer: 'ZEBRA',
+        operational_area: [
+            { label: 'Beverage Logistics', value: 'BEVERAGE_LOGISTICS' }, 
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' },
+        ],
+        price: 560,
+        weight: 296,
+        name: 'Zebra MC2700',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2012669047/2012441964/ZebraMC2700.png',
+        specifications: [
+            'Price: from 560 euros',
+            'Display: 4 inches',
+            'Weight: 296 grams',
+            'Available accessories: Standard range 1D/2D scan engine and removable battery, expandable to 4,900 mAh'
+        ],
+        assessment: 'The latest device class from Zebra is a comparatively inexpensive device with good performance features - depending on the model variant - and a 34-key hardware keyboard. New is the “PRZM Intelligent Imaging” technology, which can also be used to read damaged barcodes. Thanks to its cellular capability, the MC2700 is suitable for outdoor use.',
+        manufacturer_url: 'https://www.zebra.com/de/de/products/spec-sheets/mobile-computers/handheld/mc2200-mc2700.html',
+    },
+    {
+        id: "fa95eb6c-e269-462e-8418-cb6f647eb54b",
+        is_favorite: false,
+        is_rental: false,
+        type: 'WEARABLE_HANDHELD_SCANNER',
+        manufacturer: 'ZEBRA',
+        operational_area: [
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' },
+        ],
+        price: 700,
+        weight: 70,
+        name: 'Zebra RS6100',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2015395946/2012441964/Zebra RS6100.png',
+        specifications: [
+            'Price: from 700 euros',
+            'Display: 0 inches',
+            'Weight: 70 grams',
+            'Available accessories: Powerful 1D/2D scanning module SE55, pairing with Zebra devices via NFC or BT 5.2, replaceable battery'
+        ],
+        assessment: 'The RS6100 ring scanner from Zebra is a tool for scan-intensive processes in warehouse logistics. The wearable can be worn on a finger, mounted on a glove, on the back of the hand or on a collar. With the new scanning module, a range of 12m can be achieved.',
+        manufacturer_url: 'https://www.zebra.com/de/de/products/mobile-computers/wearable-computers/rs6100.html',
+    },
 ];
 
 export default products;
