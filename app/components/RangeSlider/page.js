@@ -15,7 +15,7 @@ const Slider = ({
 
     const setSliderValue = v => {
         setValue(v)
-        onValueChange(value)
+        onValueChange(v)
     }
     
     return (
@@ -28,7 +28,7 @@ const Slider = ({
             constraint={([start, end]) => start < end && end > start}
             value={currentValue}
             defaultValue={value}
-            tooltip={false}/>
+            tooltip={true}/>
     )
 }
 
