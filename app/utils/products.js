@@ -796,6 +796,117 @@ const products = [
         assessment: 'Very good value for money in the middle class. The device impresses with a precise scanner, a fast processor and high-quality workmanship.',
         manufacturer_url: 'https://sps.honeywell.com/de/de/products/productivity/mobile-computers/handheld-computers/ct60-xp-handheld-computer',
     },
+    {
+        id: "61742430-7de8-4457-a0a2-2395e06421c5",
+        is_favorite: true,
+        is_rental: false,
+        type: 'HANDHELD_COMPUTER',
+        manufacturer: 'KEYENCE',
+        operational_area: [
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' }, 
+        ],
+        price: 0,
+        weight: 487,
+        name: 'Keyence BT-A700',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2041705648/2012441964/Keyence BT-A700.png',
+        specifications: [
+            'Price: from 0 euros',
+            'Display: 5 inches',
+            'Weight: 487 grams',
+            'Available accessories: Full-range scanning engine: 2.5 cm - 10 m scanning range, replaceable 6250 mAh battery, emergency power supply, one-handed operation, IP67'
+        ],
+        assessment: 'The BT-A700 is a very high-quality mobile computer from the Japanese sensor specialist Keyence. The handheld terminal therefore has a high-performance scan engine. In addition to its robustness, the device impresses with its low weight and a very powerful battery.',
+        manufacturer_url: 'https://www.keyence.de/products/mobile-computers/handheld-computers/bt-a700/',
+    },
+    {
+        id: "2e76f13a-0d48-49f1-8a40-19d20ffdbd82",
+        is_favorite: false,
+        is_rental: false,
+        type: 'WEARABLE_HANDHELD_SCANNER',
+        manufacturer: 'FEIG',
+        operational_area: [
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' }, 
+        ],
+        price: 600,
+        weight: 70,
+        name: 'Feig HyWEAR compact xT',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2043918401/2012441964/Feig HyWear compact xT.png',
+        specifications: [
+            'Price: from 600 euros',
+            'Display: 0 inches',
+            'Weight: 70 grams',
+            'Available accessories: replaceable 1100mAh battery, BT 5.0, 4-way charging station, 2 configurable function keys, different work gloves, WLAN, 2D imager extended range'
+        ],
+        assessment: 'HyWEAR compact is a hybrid barcode & RFID (optional) wearable that makes logistical processes more efficient by working with both hands and offers a good alternative to the Proglove hand scanner.',
+        manufacturer_url: 'https://www.feig.de/produkte/identification/produkt/hywear-compact-xt/',
+    },
+    {
+        id: "5170dd7b-9e91-4921-823e-b2a8ad06927f",
+        is_favorite: false,
+        is_rental: false,
+        type: 'FORKLIFT_TERMINAL_TABLET',
+        manufacturer: 'PANASONIC',
+        operational_area: [
+            { label: 'Maintenance', value: 'MAINTENANCE' },
+            { label: 'Field Service', value: 'FIELD_SERVICE' }
+        ],
+        price: 1500,
+        weight: 885,
+        name: 'Panasonic Toughbook A3',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2043949983/2012441964/panasonic_fz-a3@2x.jpg',
+        specifications: [
+            'Price: from 1500 euros',
+            'Display: 10.1 inches',
+            'Weight: 885 grams',
+            'Available accessories: Extra long operating time of up to 15 hours with additional battery, LTE, Bluetooth, WLAN, NFC + gadget port'
+        ],
+        assessment: 'With the FZ-A3, Panasonic delivers a high-performance and very robust tablet for outdoor use. The anti-reflective screen is very easy to read outdoors. The optional use of a scanner or smart card reader makes the device very flexible. It is also suitable for use on forklifts.',
+        manufacturer_url: 'https://business.panasonic.de/mobile-it-solutions/produkte-und-zubeh%C3%B6r/tablets/TOUGHBOOK-A3',
+    },
+    {
+        id: "1ab07733-f92a-4ce0-bde4-1e0865bb776b",
+        is_favorite: false,
+        is_rental: false,
+        type: 'HANDHELD_COMPUTER',
+        manufacturer: 'ZEBRA',
+        operational_area: [
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' }, 
+        ],
+        price: 2000,
+        weight: 490,
+        name: 'Zebra TC8300',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2044520301/2012441964/zebra_tc8300@2x.jpg',
+        specifications: [
+            'Price: from 2000 euros',
+            'Display: 4 inches',
+            'Weight: 490 grams',
+            'Available accessories: Inclined scanning angle and pistol grip form factor, 5 scan engines for scanning from 3" to 70 feet'
+        ],
+        assessment: 'An innovative design with an inclined barcode scanner makes the TC8300 from Zebra an exceptional device. The current version has a fast processor and a powerful 7,000 mAh battery.',
+        manufacturer_url: 'https://www.zebra.com/de/de/products/mobile-computers/handheld/tc8300.html',
+    },
+    {
+        id: "a82d31ca-b46c-430b-bd96-4c042b62b335",
+        is_favorite: false,
+        is_rental: false,
+        type: 'HANDHELD_COMPUTER',
+        manufacturer: 'ZEBRA',
+        operational_area: [
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' }, 
+        ],
+        price: 1900,
+        weight: 765,
+        name: 'Zebra MC9300',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2051671743/2012441964/zebra mc9300.png',
+        specifications: [
+            'Price: from 1900 euros',
+            'Display: 4.3 inches',
+            'Weight: 765 grams',
+            'Available accessories: 4 scan engines (omnidirectional, DPM, long-range), powerful 7,000 mAh battery'
+        ],
+        assessment: 'The MC9300 is a very robust device. Various configurations enable precise use in harsh environments. Unfortunately, Zebra does not offer a mobile phone option, which would make the device the ideal terminal in the external warehouse.',
+        manufacturer_url: 'https://www.zebra.com/de/de/products/mobile-computers/handheld/mc9300.html',
+    },
 ];
 
 export default products;

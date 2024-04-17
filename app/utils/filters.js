@@ -19,7 +19,7 @@ const filters = {
         { label: 'CAT', value: 'CAT', enabled: true }, 
         { label: 'Cipherlab', value: 'CIPHERLAB', enabled: true }, 
         { label: 'Datalogic', value: 'DATALOGIC', enabled: true },
-        { label: 'Cowardly', value: 'COWARDLY', enabled: true }, 
+        { label: 'Feig', value: 'FEIG', enabled: true }, 
         { label: 'Getac', value: 'GETAC', enabled: true }, 
         { label: 'Gigaset', value: 'GIGASET', enabled: true }, 
         { label: 'Honeywell', value: 'HONEYWELL', enabled: true },
