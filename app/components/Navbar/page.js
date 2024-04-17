@@ -5,21 +5,25 @@ import style from './navbar.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
-  faChevronDown
+  faArrowRightLong
 } from "@fortawesome/free-solid-svg-icons";
 import React from 'react';
+import Products from './Products/page';
+import Why from './Why/page';
+import Events from './Events/page';
+import Resources from './Resources/page';
 
 const Navbar = () => {
 
     const [expand, setExpansion] = React.useState(false)
-    const [mobileExpand, setMobileExpansion] = React.useState(false)
+    const [activeMobileTab, setActiveTab] = React.useState(0)
 
     const toggleExpansion = () => {
         setExpansion(!expand)
     }
 
-    const toggleMobileExpansion = () => {
-        setMobileExpansion(!mobileExpand)
+    const handleActiveTab = v => {
+        setActiveTab(v)
     }
 
     return (
@@ -183,63 +187,26 @@ const Navbar = () => {
             `}>    
                 <div className={style.mobile_nav__container}>
                     <ul>
-                        <li className={style.active}>Products</li>
-                        <li>Why ?</li>
-                        <li>Events</li>
-                        <li>Resources</li>
+                        {
+                            ['Products', 'Why ?', 'Events', 'Resources']
+                            .map((item, key) => (
+                                <li 
+                                    onClick={() => handleActiveTab(key)}
+                                    className={`${activeMobileTab == key ? style.active : null}`}
+                                    key={key}>
+                                    { item }
+                                </li>
+                            ))
+                        }
                     </ul>
                     <div className={style.products}>
-                        <div className={style.products__menus}>
-                            <div className={style.products__menus__header}>
-                                <Image
-                                    src="/ontego_subline.svg"
-                                    alt="arrow"
-                                    width={104}
-                                    height={55}
-                                    priority/>
-                                <FontAwesomeIcon 
-                                    onClick={toggleMobileExpansion}
-                                    className={`${mobileExpand ? style.up : style.down}`}
-                                    icon={faChevronDown} />
-                            </div>
-                            <div className={`${style.products__menus__dropdown} ${mobileExpand ? style.expand : ''}`}>
-                                <p className={style.products__menus__dropdown__title}>Features</p>
-                                <ul>
-                                    {
-                                        ['User Experience', 'Template Principle', 'Sap Integration', 'Offline & Sync+', 'ERP Extensions', 'Ontego Designer']
-                                        .map((item, key) => (
-                                            <li key={key}>
-                                                <a href='https://google.com'>{ item }</a>
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-                                <p className={style.products__menus__dropdown__title}>Areas of Application</p>
-                                <ul>
-                                    {
-                                        ['Warehouse Logistcs', 'Production', 'Inventory', 'Service Management', 'Maintenance', 'Other Areas']
-                                        .map((item, key) => (
-                                            <li key={key}>
-                                                <a href='https://google.com'>{ item }</a>
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-                                <p className={style.products__menus__dropdown__title}>Mobile Devices</p>
-                                <ul>
-                                    {
-                                        ['Warehouse Logistcs', 'Production', 'Inventory', 'Service Management', 'Maintenance', 'Other Areas']
-                                        .map((item, key) => (
-                                            <li key={key}>
-                                                <a href='https://google.com'>{ item }</a>
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-                            </div>
-                        </div>
+                        { activeMobileTab == 0 && <Products/> }
+                        { activeMobileTab == 1 && <Why/> }
+                        { activeMobileTab == 2 && <Events/> }
+                        { activeMobileTab == 3 && <Resources/> }
                         <div className={style.products__request}>
                             Request a Demo
+                            <FontAwesomeIcon icon={faArrowRightLong} />
                         </div>
                     </div>
                 </div>
@@ -257,23 +224,23 @@ const Navbar = () => {
                             <li>
                                 <font>Features</font>
                                 <div>
-                                    <span>User Experience</span>   
-                                    <span>Template Principle</span>
-                                    <span>SAP Integration</span>
-                                    <span>Offline & Sync+</span>
-                                    <span>ERP Extensions</span>
-                                    <span>Ontego Designer</span>
+                                    {
+                                        ['User Experience', 'Template Principle', 'SAP Integration', 'Offline & Sync+', 'ERP Extensions', 'Ontego Designer']
+                                        .map((item, key) => (
+                                            <span key={key}>{ item }</span>
+                                        ))
+                                    }
                                 </div>
                             </li>
                             <li>
                                 <font>Areas of Application</font>
                                 <div>
-                                    <span>Warehouse Logistics</span> 
-                                    <span>Production</span>
-                                    <span>Inventory</span>
-                                    <span>Service Management</span>
-                                    <span>Maintenance</span>
-                                    <span>Other Areas</span>  
+                                    {
+                                        ['Warehouse Logistics', 'Production', 'Inventory', 'Service Management', 'Maintenance', 'Other Areas']
+                                        .map((item, key) => (
+                                            <span key={key}>{ item }</span>
+                                        ))
+                                    }
                                 </div>
                             </li>
                             <li><font>Mobile Devices</font></li>

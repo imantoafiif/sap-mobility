@@ -1,0 +1,53 @@
+.menus {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    animation: show .5s ease ;
+
+    @keyframes show {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    &__dropdown {
+        text-align: center;
+        overflow: hidden;
+        transition: all .5s ease;
+        height: 100%;
+
+        & > ul {
+            margin: 0 20%;
+            margin-bottom: 30px;
+
+            li {
+                background: white;
+                height: 36px;
+                color: #383d47;
+                font-size: 12px;
+                font-weight: 300;
+                letter-spacing: 0.2px;
+                vertical-align: middle;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    width: 180px;
+                }
+            }
+        }
+
+        &__title {
+            font-family: 'Times New Roman', Times, serif;
+            color: #2d333d;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 26px;
+            margin-bottom: 9px;
+        }
+    }
+}
