@@ -24,7 +24,7 @@ const Hoverables = ({ scrollToTop, pos }) => {
 
     const setAgreementCookie = () => {
         setDisplayAgreement(false)
-        Cookies.set('ontego.exp.cookie', 1, { expires: 365 })
+        Cookies.set('ontego.exp', 1, { expires: 365 })
     }
 
     React.useEffect(() => {
@@ -32,7 +32,7 @@ const Hoverables = ({ scrollToTop, pos }) => {
     }, [pos])
 
     React.useEffect(() => {
-        setCookieStored(Cookies.get('ontego.exp.cookie'))
+        setCookieStored(Cookies.get('ontego.exp'))
     }, [])
 
     return (
