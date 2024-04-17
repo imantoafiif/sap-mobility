@@ -35,6 +35,10 @@
     box-shadow: 0 8px 28px rgba(0,0,0,.28);
     border-radius: 12px;
     z-index: 2;
+    
+    @media screen and (max-width: 991px ) {
+        width: 95%;
+    }
 
     &__container {
         display: flex;
@@ -48,10 +52,10 @@
         }
 
         .agreement_content {
-            width: 620px;
+            max-width: 620px;
             padding: 0 15px;
             font-size: 14px;
-            line-height: 1.75em;
+            line-height: 26px;
         }
 
         .footer {
