@@ -296,7 +296,7 @@ const Products = () => {
                     </div>
                 </div>
                 <div className={style.filter__filter_actions}>
-                    <span>Alle Angaben / Preise ohne Gewähr</span>
+                    <span>All information/prices without guarantee</span>
                     <div>
                         <button onClick={resetFilter}>Reset Filters</button>
                         <button onClick={handleExpansionToggle}>{ expand ? 'Hide' : 'Show More' } Filters</button>
