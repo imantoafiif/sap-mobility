@@ -14,7 +14,7 @@ const filters = {
     manufacturer: [
         { label: 'ACD', value: 'ACD', enabled: true }, 
         { label: 'Advantech', value: 'ADVANTECH', enabled: true }, 
-        { label: 'Bixolone', value: 'BIXOLONE', enabled: true },
+        { label: 'Bixolon', value: 'BIXOLON', enabled: true },
         { label: 'Casio', value: 'CASIO', enabled: true }, 
         { label: 'CAT', value: 'CAT', enabled: true }, 
         { label: 'Cipherlab', value: 'CIPHERLAB', enabled: true }, 
