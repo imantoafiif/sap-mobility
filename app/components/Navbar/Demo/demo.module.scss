@@ -21,7 +21,7 @@
 .body_container {
     position: absolute;
     background: white;
-    bottom: -937px;
+    bottom: -100%;
     width: 100%;
     height: calc(100% - 48px);
     z-index: 99;
@@ -43,6 +43,6 @@
     }
 
     &.hide {
-        bottom: -937px;
+        bottom: none;
     }
 }
