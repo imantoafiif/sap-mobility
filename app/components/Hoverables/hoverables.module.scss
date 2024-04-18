@@ -155,19 +155,64 @@
             line-height: 20px;
             border-color: rgba(255, 0, 0, 0.6);
         }
+    }
 
-        & > div {
-            border: 2px solid white;
-            color: white;
-            margin: 0 0 0 12px;
-            padding: 0 50px 0 16px;
-            width: 160px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 80%;
+    .send_mail {
+        border: 2px solid white;
+        color: white;
+        margin: 0 0 0 12px;
+        padding: 0 50px 0 16px;
+        width: 160px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        gap: 80%;
+
+        &.mobile {
+            @media screen and (max-width: 575px) {
+                display: flex;
+            }
+        }
+
+        &.web {
+            @media screen and (min-width: 576px) {
+                display: flex;
+            }
+        }
+    }
+
+    @media screen and (max-width: 575px ) {
+        width: 100%;
+        border-radius: 0;
+        padding: 60px 40px;
+        bottom: -600px;
+        right: 0;
+        height: auto;
+
+        &.active {
+            width: 100%;
+            border-radius: 0;
+            bottom: 0;
+        }
+
+        .input_email {
+            & > input {
+                width: 100%;
+            }
+        }
+
+        .checkbox_container {
+            margin-bottom: 30px;
+        }
+
+        .send_mail {
+            margin: 0;
+            width: 100%;
+            padding: 0;
+            justify-content: center;
+            height: 48px;
         }
     }
     // right: -670px;

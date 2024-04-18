@@ -67,7 +67,7 @@ const Hoverables = ({ scrollToTop, pos }) => {
                 <p>We will be happy to send you the most important updates from our Hardware Finder.</p>
                 <div className={style.input_email}>
                     <input placeholder="Email *" type="email"></input>
-                    <div>
+                    <div className={`${style.send_mail} ${style.web}`}>
                         <span>Send</span>
                         <FontAwesomeIcon icon={faArrowRightLong} />
                     </div>
@@ -75,6 +75,10 @@ const Hoverables = ({ scrollToTop, pos }) => {
                 <div className={style.checkbox_container}>
                     <span className={style.checkmark}></span>
                     <span className={style.label}>I agree to be contacted only for updates to this page.</span>
+                </div>
+                <div className={`${style.send_mail} ${style.mobile}`}>
+                    <span>Send</span>
+                    <FontAwesomeIcon icon={faArrowRightLong} />
                 </div>
             </div>
             <div
