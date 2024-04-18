@@ -1929,6 +1929,122 @@ const products = [
         assessment: 'The handy label printer from Bixolon offers a cost-effective alternative to the Zebra ZQ511. It impresses with its compactness and long battery life.',
         manufacturer_url: 'https://bixolon.com/product_view.php?idx=215',
     },
+    {
+        id: "234f2830-88b2-4aad-b9d2-1215b34d34da",
+        is_favorite: false,
+        is_rental: false,
+        type: 'HANDHELD_COMPUTER',
+        manufacturer: 'NEWLAND',
+        operational_area: [
+            { label: 'Maintenance', value: 'MAINTENANCE' },
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' }, 
+        ],
+        price: 900,
+        weight: 287,
+        name: 'Newland MT95 Kambur Pro',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2097490841/2012441964/Newland MT95.png',
+        specifications: [
+            'Price: from 900 euros',
+            'Display: 6.1 inches',
+            'Weight: 287 grams',
+            'Available accessories: Newland 2D megapixel scanning technology, 6000 mAh battery, 5G, Android 11, IP67, BT 5.2, 6GB RAM'
+        ],
+        assessment: 'The Newland MT95 Kambur Pro is a cheaper alternative to the Zebra TC58. Anyone who values ​​a large display and modern design will get a good all-rounder with a strong price-performance ratio.',
+        manufacturer_url: 'https://www.newland-id.com/de/produkte/mobilcomputer/mt95-kambur-pro',
+    },
+    {
+        id: "809f60a3-0d58-49a1-9327-37798d5b14f7",
+        is_favorite: true,
+        is_rental: false,
+        type: 'SMARTPHONE',
+        manufacturer: 'CAT',
+        operational_area: [
+            { label: 'Beverage Logistics', value: 'BEVERAGE_LOGISTICS' }, 
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' }, 
+        ],
+        price: 190,
+        weight: 220,
+        name: 'CAT S42',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2097708217/2012441964/CAT S42.png',
+        specifications: [
+            'Price: from 190 euros',
+            'Display: 5.5 inches',
+            'Weight: 220 grams',
+            'Available accessories: Android 10, powerful battery with 4,200 mAh and can be operated with wet fingers and gloves.'
+        ],
+        assessment: 'The S42 from CAT is certified according to IP68 and is therefore a robust companion in the field, e.g. B. in beverage delivery. The rubberized housing is pleasantly non-slip, and the replaceable battery allows you to work for a long time.',
+        manufacturer_url: 'https://www.catphones.com/de-de/cat-s42-smartphone/',
+    },
+    {
+        id: "81c1cb4e-27d5-45dc-ad14-96a5b8478e03",
+        is_favorite: false,
+        is_rental: false,
+        type: 'FORKLIFT_TERMINAL_TABLET',
+        manufacturer: 'SAMSUNG',
+        operational_area: [
+            { label: 'Maintenance', value: 'MAINTENANCE' },
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' }, 
+            { label: 'Field Service', value: 'FIELD_SERVICE' }, 
+        ],
+        price: 300,
+        weight: 534,
+        name: 'Samsung Tab A SM-T595',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2097784761/2012441964/Samsung Tab A SM-T595N.png',
+        specifications: [
+            'Price: from 300 euros',
+            'Display: 10.5 inches',
+            'Weight: 534 grams',
+            'Available accessories: Optional protective case available, no imager, built-in 7300 mAh battery, LTE'
+        ],
+        assessment: 'The Galaxy Tab A SM-T595 from Samsung is a classic consumer tablet, which is reflected in the comparatively low price. The device is conceivable for simple application scenarios that do not place any special demands on robustness or hardware equipment.',
+        manufacturer_url: 'https://www.samsung.com/de/business/tablets/galaxy-taba-t595/sm-t595nzkadbt/',
+    },
+    {
+        id: "2a927a10-3812-4bff-8700-ccce7e6ee9e3",
+        is_favorite: true,
+        is_rental: false,
+        type: 'HANDHELD_COMPUTER',
+        manufacturer: 'POINT_MOBILE',
+        operational_area: [
+            { label: 'Warehouse & Production', value: 'WAREHOUSE_&_PRODUCTION' }, 
+            { label: 'Field Service', value: 'FIELD_SERVICE' }, 
+        ],
+        price: 1100,
+        weight: 300,
+        name: 'Point Mobile PM67',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2098788192/2012441964/Point Mobile PM67.png',
+        specifications: [
+            'Price: from 1100 euros',
+            'Display: 4.3 inches',
+            'Weight: 300 grams',
+            'Available accessories: Physical keypad with backlight, N3601 1D/2D LED barcode scanning engine, fixed 4200 mAh battery'
+        ],
+        assessment: 'The PM67 is a robust mobile computer that is used in the areas of transport logistics and warehouse logistics.',
+        manufacturer_url: 'https://www.pointmobile.com/de/products-mobilecomputers/PM67',
+    },
+    {
+        id: "7d7617a4-e429-45bf-be32-d2ba7c5974dd",
+        is_favorite: true,
+        is_rental: false,
+        type: 'FORKLIFT_TERMINAL_TABLET',
+        manufacturer: 'SAMSUNG',
+        operational_area: [
+            { label: 'Maintenance', value: 'MAINTENANCE' },
+            { label: 'Field Service', value: 'FIELD_SERVICE' }, 
+        ],
+        price: 500,
+        weight: 674,
+        name: 'Samsung Tab Active 4 Pro',
+        image: 'https://skystatic08.atmos.id/11018/2049634327/2099471937/2012441964/Samsung tab active 4 pro.png',
+        specifications: [
+            'Price: from 500 euros',
+            'Display: 10.1 inches',
+            'Weight: 674 grams',
+            'Available accessories: IP68 certified and replaceable 7,600mAh battery, 5G mobile communications optional'
+        ],
+        assessment: 'The Tab Active 4 Pro from Samsung is a robust consumer tablet and well suited for use in harsh, damp and dirty environments. The battery is powerful and allows you to work independently beyond a standard shift. The device is designed for horizontal app operation - so the physical Android control buttons are mounted horizontally on the device.',
+        manufacturer_url: 'https://www.samsung.com/de/tablets/others/galaxy-tab-active4-pro-5g-black-128gb-sm-t636bzkeeeb/',
+    },
 ];
 
 export default products;
