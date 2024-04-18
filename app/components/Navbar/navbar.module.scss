@@ -212,6 +212,7 @@
                 color: #0077b6;
                 font-weight: 500;
                 padding: 0 16px;
+                width: 100%;
                 justify-content: space-between;
             }
         }
@@ -457,15 +458,10 @@
         transition: all .3s ease;
         position: relative;
         margin: 0 12px;
+        width: 165px;
 
-        & > img {
-            width: 18px;
-            height: 30px;
-            fill: red;
-            stroke: red;
-        }
-
-        & > span {
+        & > span,
+        & > svg {
             z-index: 1;
         }
 

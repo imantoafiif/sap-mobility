@@ -1,9 +1,13 @@
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Roboto({ 
+  subsets: ["latin"], 
+    weight: ['400', '700'],
+
+});
 config.autoAddCss = false;
 
 export const metadata = {

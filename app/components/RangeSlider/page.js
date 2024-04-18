@@ -28,7 +28,7 @@ const Slider = ({
             constraint={([start, end]) => start < end && end > start}
             value={currentValue}
             defaultValue={value}
-            tooltip={true}/>
+            tooltip={false}/>
     )
 }
 
