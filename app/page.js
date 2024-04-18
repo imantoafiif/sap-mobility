@@ -43,7 +43,7 @@ const Page = () => {
                 className={style.content}>
                 <Intro/>
                 <Products/>
-                {/* <ProductsMobile/> */}
+                <ProductsMobile/>
                 <Footer/>
                 <Hoverables scrollToTop={scrollToTop} pos={scrollY} />
             </section>

@@ -398,16 +398,7 @@ const Products = () => {
                     ))
                 }
             </div>
-            {/* <div className={style.test}>
-                <p className={`${style.grid_test}`}>abc</p>
-                <p className={style.grid_test}>abc</p>
-                <p className={style.grid_test}>abc</p>
-                <p className={style.grid_test}>abc</p>
-                <p className={style.grid_test}>abc</p>
-                <p className={style.grid_test}>abc</p>
-
-            </div> */}
-            <div className={style.container__info}>
+            {/* <div className={style.container__info}>
                 <h5>Unfortunately we don't have enough space here...</h5>
                 <p>... for our hardware finder. But feel free to visit this page while having your morning coffee at work and browse through recommendations, overviews and helpful links to the latest mobile devices.</p>
                 <Image
@@ -416,7 +407,7 @@ const Products = () => {
                     width={510}
                     height={382.5}
                     priority/>           
-            </div>
+            </div> */}
         </section>
     )
 }

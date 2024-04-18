@@ -5,6 +5,7 @@ import style from './navbar.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
+  faX,
   faArrowRightLong
 } from "@fortawesome/free-solid-svg-icons";
 import React from 'react';
@@ -29,14 +30,14 @@ const Navbar = () => {
     return (
         <header className={style.header}>
             <div className={style.nav_container}>
-                <div className={style.nav_container__header}>
+                <div className={`${style.nav_container__header} ${expand ? style.expanded : ''}`}>
                     <Image
                         src="/ontego_business_mobi.svg"
                         alt="logo"
                         width={165}
                         height={22}
                         priority/>
-                    <FontAwesomeIcon onClick={toggleExpansion} icon={faBars} />
+                    <FontAwesomeIcon onClick={toggleExpansion} icon={expand ? faX : faBars} />
                 </div>
                 <menu>
                     <ul className={style.header__menu}>
