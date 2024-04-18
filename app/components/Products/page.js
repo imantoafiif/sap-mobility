@@ -360,7 +360,7 @@ const Products = () => {
                                             ${style.filtered__detail__container} 
                                             ${selectedItem?.key === key ? style.show : style.fade}
                                         `}>
-                                            <img src={selectedItem?.item?.image}></img>
+                                            <img alt='product-preview' src={selectedItem?.item?.image}></img>
                                             <div className={style.filtered__detail__container__specs}>
                                                 <h6>{ selectedItem?.item?.name }</h6>
                                                 <ul>
