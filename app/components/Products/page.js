@@ -385,7 +385,7 @@ const Products = () => {
                                                 </div>
                                                 <a 
                                                     target='_blank' 
-                                                    href={selectedItem?.item.manufacturer_url}>
+                                                    href={selectedItem?.item?.manufacturer_url || '#'}>
                                                     To the manufacturer
                                                     <FontAwesomeIcon icon={faArrowRightLong} />                            
                                                 </a>
