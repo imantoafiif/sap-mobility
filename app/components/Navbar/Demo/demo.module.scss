@@ -43,8 +43,23 @@
             width: 100%;
             text-align: right;
         }   
+        
+        label {
+            width: 100%;
 
-        & > input,
+            & > input {
+                background: #f5f5f5;
+                width: 100%;
+                padding: 10px 14px;
+                margin-bottom: 24px;
+            }
+
+            & > input:focus,
+            & > textarea:focus {
+                outline: none;
+            }   
+        }
+
         & > textarea {
             background: #f5f5f5;
             width: 100%;
@@ -54,11 +69,6 @@
 
         & > textarea {
             min-height: 104px;
-        }
-
-        & > input:focus,
-        & > textarea:focus {
-            outline: none;
         }
 
         h1 {

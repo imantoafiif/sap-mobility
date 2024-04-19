@@ -59,10 +59,10 @@ const Demo = ({ is_active, handleReqDemo }) => {
                         }
                     </div>
                     <h1>How are we allowed to contact you ?</h1>
-                    <input placeholder='Surname *' type='text'/>
-                    <input placeholder='Email *' type='email'/>
-                    <input placeholder='Company (optional)' type='text'/>
-                    <input placeholder='Phone (optional)' type='tel'/>
+                    <label><input placeholder='Surname *' type='text'/></label>
+                    <label><input placeholder='Email *' type='email'/></label>
+                    <label><input placeholder='Company (optional)' type='text'/></label>
+                    <label><input placeholder='Phone (optional)' type='tel'/></label>
                     <textarea placeholder='News' id="w3review" name="w3review" rows="4" cols="50"/>
                     <div className={style.checkbox_container}>
                         <div></div>
