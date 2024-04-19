@@ -68,7 +68,7 @@ const Navbar = () => {
                                                         ['User Experience', 'Template Principle', 'Sap Integration', 'Offline & Sync+', 'ERP Extensions', 'Ontego Designer']
                                                         .map((item, key) => (
                                                             <li key={key}>
-                                                                <a href='https://google.com'>{ item }</a>
+                                                                <a href='#'>{ item }</a>
                                                             </li>
                                                         ))
                                                     }
@@ -81,7 +81,7 @@ const Navbar = () => {
                                                     ['Warehouse Logistcs', 'Production', 'Inventory', 'Service Management', 'Maintenance', 'Other Areas']
                                                     .map((item, key) => (
                                                         <li key={key}>
-                                                            <a href='https://google.com'>{ item }</a>
+                                                            <a href='#'>{ item }</a>
                                                         </li>
                                                     ))
                                                 }

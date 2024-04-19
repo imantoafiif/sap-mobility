@@ -11,7 +11,7 @@ const Events = () => {
                         ['VLB Logistics Congress 2024', 'LogiMAT 2024']
                         .map((item, key) => (
                             <li key={key}>
-                                <a href='https://google.com'>{ item }</a>
+                                <a href='#'>{ item }</a>
                             </li>
                         ))
                     }

@@ -29,9 +29,9 @@ const Demo = ({ is_active, handleReqDemo }) => {
             `}>
                 <div className={style.content}>
                     <div className={style.controller}>
-                        <button onClick={handleReqDemo}>
+                        <div onClick={handleReqDemo}>
                             <FontAwesomeIcon icon={faX} />
-                        </button>
+                        </div>
                     </div>
                     <h1>Do you need a mobile solution ?</h1>
                     <div className={style.radio_groups}>

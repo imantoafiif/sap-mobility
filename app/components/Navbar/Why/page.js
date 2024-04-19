@@ -17,7 +17,7 @@ const Why = () => {
                         ['Credentials']
                         .map((item, key) => (
                             <li key={key}>
-                                <a href='https://google.com'>{ item }</a>
+                                <a href='#'>{ item }</a>
                             </li>
                         ))
                     }
@@ -28,7 +28,7 @@ const Why = () => {
                         ['Pursue', 'Locations', 'Career']
                         .map((item, key) => (
                             <li key={key}>
-                                <a href='https://google.com'>{ item }</a>
+                                <a href='#'>{ item }</a>
                             </li>
                         ))
                     }
