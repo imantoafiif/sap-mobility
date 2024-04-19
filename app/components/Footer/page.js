@@ -52,7 +52,7 @@ const Footer = () => {
                                 <span>
                                     <a 
                                         target='_blank'
-                                        href='www.comsult.de'>
+                                        href='https://www.comsult.de'>
                                         www.commsult.de
                                     </a>
                                 </span>
