@@ -6,10 +6,35 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faX,
-  faArrowRightLong
+  faArrowRightLong,
+  faCheck
 } from "@fortawesome/free-solid-svg-icons";
 
 const Demo = ({ is_active, handleReqDemo }) => {
+
+    const [requirement, setRequirement] = React.useState(null)
+    const [areas, setAreas] = React.useState([])
+    const [agree, setAgreement] = React.useState(false)
+
+    const handleRequirement = v => {
+        setRequirement(v)
+    }
+
+    const handleAreas = v => {
+        const index = areas.indexOf(v)
+        if(index < 0) {
+            setAreas([...areas, v])
+            return
+        }
+        const item = [...areas]
+        item.splice(index, 1)
+        setAreas(item)
+    }
+
+    const toggleAgreement = () => {
+        setAgreement(!agree)
+    }
+
     return (
         <>
             <div className={`
@@ -36,12 +61,17 @@ const Demo = ({ is_active, handleReqDemo }) => {
                     <h1>Do you need a mobile solution ?</h1>
                     <div className={style.radio_groups}>
                         {
-                            [0, 0].map((item, key) => (
+                            ['Yes, please send me a demo appointment', 'Yes, but before that i still have manufacturers'].map((item, key) => (
                                 <div
+                                    onClick={() => handleRequirement(key)}
                                     key={key} 
                                     className={style.content__radio}>
-                                    <div className={style.content__radio__checkmark}></div>
-                                    <span>Yes, please send me a demo appointment</span>
+                                    <div className={style.content__radio__checkmark}>
+                                        {
+                                            (requirement == key) && <div className={style.checked}></div>
+                                        }
+                                    </div>
+                                    <span>{ item }</span>
                                 </div>
                             ))
                         }
@@ -51,8 +81,9 @@ const Demo = ({ is_active, handleReqDemo }) => {
                         {
                             ['Warehouse logistics', 'Production', 'Inventory', 'Service management', 'Maintenance', 'Other areas'].map((item, key) => (
                                 <span
+                                    onClick={() => handleAreas(item)}
                                     key={key} 
-                                    className={style.chip}>
+                                    className={`${style.chip} ${areas.includes(item) ? style.active : null}`}>
                                     { item }
                                 </span>
                             ))
@@ -64,8 +95,12 @@ const Demo = ({ is_active, handleReqDemo }) => {
                     <label><input placeholder='Company (optional)' type='text'/></label>
                     <label><input placeholder='Phone (optional)' type='tel'/></label>
                     <textarea placeholder='News' id="w3review" name="w3review" rows="4" cols="50"/>
-                    <div className={style.checkbox_container}>
-                        <div></div>
+                    <div
+                        onClick={toggleAgreement} 
+                        className={style.checkbox_container}>
+                        <div>
+                            { agree && <FontAwesomeIcon icon={faCheck} /> }
+                        </div>
                         I agree to be contacted to process the request.
                     </div>
                     <div className={style.send_container}>
