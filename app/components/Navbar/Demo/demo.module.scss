@@ -27,15 +27,38 @@
     z-index: 99;
     transition: all .7s ease;
     overflow-y: auto;
+    display: flex;
+    justify-content: center;
 
     .content {
         display: flex;
         flex-direction: column;
         padding: 40px;
         align-items: center;
+        max-width: 600px;
+        overflow-y: auto;
+        scrollbar-width: none;
 
-        & > button {
+        .controller {
+            width: 100%;
             text-align: right;
+        }   
+
+        & > input,
+        & > textarea {
+            background: #f5f5f5;
+            width: 100%;
+            padding: 10px 14px;
+            margin-bottom: 24px;
+        }
+
+        & > textarea {
+            min-height: 104px;
+        }
+
+        & > input:focus,
+        & > textarea:focus {
+            outline: none;
         }
 
         h1 {
@@ -53,7 +76,7 @@
             font-family: 'Times New Roman', Times, serif;
             font-size: 24px;
             font-weight: bold;
-            line-height: 28px;        
+            line-height: 28px;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -63,6 +86,7 @@
             flex-direction: column;
             gap: 22px;
             margin-bottom: 60px;
+            width: 100%;
         }
 
         &__radio {
@@ -73,6 +97,7 @@
             &__checkmark {
                 height: 25px;
                 width: 25px;
+                min-width: 25px;
                 background: transparent;
                 border: 2px solid #d0d0d0;
                 border-radius: 200px;
@@ -84,10 +109,11 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            width: 465px;
+            max-width: 465px;
             align-items: center;
             justify-content: center;
             gap: 14px;
+            margin-bottom: 40px;
 
             .chip {
                 font-weight: 200;
@@ -98,7 +124,51 @@
                 font-size: 14px;
             }
         }
-    }   
+
+        .checkbox_container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+            font-size: 12px;
+            color: #62666e;
+            gap: 12px;
+            margin-top: 24px;
+            margin-bottom: 40px;
+
+            & > div {
+                width: 25px;
+                height: 25px;
+                background: #f5f5f5;
+            }
+        }
+
+        .send_container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: flex-end;
+
+            .send_btn {
+                font-weight: 300;
+                color: #0077b6;
+                border: 2px solid #0077b6;
+                font-size: 14px;
+                width: 160px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 50px;
+                height: 48px;
+                padding: 0 15px;
+
+                @media screen and (max-width: 575px) {
+                    width: 100%;
+                    gap: none;
+                }
+            }
+        }
+    }
 
     &.display {
         bottom: 0px;

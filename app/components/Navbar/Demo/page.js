@@ -1,9 +1,12 @@
+'use client'
+
 import React from 'react'
 import style from './demo.module.scss'
 import Image from 'next/image'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faX,
+  faArrowRightLong
 } from "@fortawesome/free-solid-svg-icons";
 
 const Demo = ({ is_active, handleReqDemo }) => {
@@ -25,9 +28,11 @@ const Demo = ({ is_active, handleReqDemo }) => {
                 ${is_active ? style.display : style.hide}
             `}>
                 <div className={style.content}>
-                    <button onClick={handleReqDemo}>
-                        <FontAwesomeIcon icon={faX} />
-                    </button>
+                    <div className={style.controller}>
+                        <button onClick={handleReqDemo}>
+                            <FontAwesomeIcon icon={faX} />
+                        </button>
+                    </div>
                     <h1>Do you need a mobile solution ?</h1>
                     <div className={style.radio_groups}>
                         {
@@ -52,6 +57,22 @@ const Demo = ({ is_active, handleReqDemo }) => {
                                 </span>
                             ))
                         }
+                    </div>
+                    <h1>How are we allowed to contact you ?</h1>
+                    <input placeholder='Surname *' type='text'/>
+                    <input placeholder='Email *' type='email'/>
+                    <input placeholder='Company (optional)' type='text'/>
+                    <input placeholder='Phone (optional)' type='tel'/>
+                    <textarea placeholder='News' id="w3review" name="w3review" rows="4" cols="50"/>
+                    <div className={style.checkbox_container}>
+                        <div></div>
+                        I agree to be contacted to process the request.
+                    </div>
+                    <div className={style.send_container}>
+                        <button className={style.send_btn}>
+                            Send
+                            <FontAwesomeIcon icon={faArrowRightLong} />
+                        </button>
                     </div>
                 </div>
             </div>
